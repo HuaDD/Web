@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>修改手机号</title>
+    <style>
+        .reg{
+            width: 720px;
+            height: 400px;
+            margin: 110px;
+            margin-left: 720px;
+        }
+        .reg p{
+            margin-bottom: 20px;
+            width: 720px;
+            height: 42px;
+        }
+        .reg p label{
+            float:left;
+            height: 42px;
+            width: 65px;
+            margin-right: 10px;
+            line-height: 42px;
+            font-size: 14px;
+            color: #666;
+            font-weight: 700;
+            text-align: right;
+        }
+        .reg p .a{
+            float:left;
+            height: 42px;
+            width: 313px;
+            padding-left: 15px;
+            margin-right: 10px;
+            border: 1px solid #ddd;
+            font-size: 14px;
+            color: #666;
+        }
+        .regs{
+            margin-left: 81px;
+        }
+        .regs a input{
+            width: 270px;
+            height: 42px;
+            border: none;
+            background-color: #3f89ec;
+            border-radius: 5px;
+            color: rgb(255,255,255);
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="reg">
+        <form action="" method="post">
+            {% csrf_token %}
+            <p>
+                <label for="user">用&nbsp户&nbsp名</label>
+                <input type="text" name="username" id="user" placeholder="请输入被修改的用户名" class="a">
+            </p>
+            <p>
+                <label for="old_phone">旧手机号</label>
+                <input type="text" name="old_phone" id="old_phone" placeholder="请输入旧手机号" class="a">
+            </p>
+              <p>
+                <label for="new_phone">新手机号</label>
+                <input type="text" name="new_phone" id="new_phone" placeholder="请输入新号码" class="a">
+            </p>
+
+            <p class="regs">
+                <!--p只能放 span a  表单控件-->
+                <a href="#">
+                    <input type="submit" value="修改">
+                </a>
+            </p>
+
+        </form>
+    </div>
+</body>
+</html>

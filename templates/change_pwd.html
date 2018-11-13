@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>修改密码</title>
+    <style>
+        .reg{
+            width: 720px;
+            height: 400px;
+            margin: 110px;
+            margin-left: 720px;
+        }
+        .reg p{
+            margin-bottom: 20px;
+            width: 720px;
+            height: 42px;
+        }
+        .reg p label{
+            float:left;
+            height: 42px;
+            width: 65px;
+            margin-right: 10px;
+            line-height: 42px;
+            font-size: 14px;
+            color: #666;
+            font-weight: 700;
+            text-align: right;
+        }
+        .reg p .a{
+            border:0;
+            float:left;
+            /*font-size: 20px;*/
+            height: 42px;
+            width: 313px;
+            padding-left: 15px;
+            margin-right: 10px;
+            border: 1px solid #ddd;
+            font-size: 14px;
+            color: #666;
+        }
+        .regs{
+            margin-left: 81px;
+        }
+        .regs a input{
+            width: 270px;
+            height: 42px;
+            border: none;
+            /*background-color:rgba(0,0,0,.6);*/
+            background-color: #3f89ec;
+            border-radius: 5px;
+            color: rgb(255,255,255);
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="reg">
+        <form action="" method="post">
+            {% csrf_token %}
+            <p>
+                <label for="user">用户名</label>
+                <input type="text" name="username" id="user" placeholder="请输入用户名" class="a">
+            </p>
+            <p>
+                <label for="old_pwd">旧密码</label>
+                <input type="text" name="old_pwd" id="old_pwd" placeholder="请输入旧密码" class="a">
+            </p>
+              <p>
+                <label for="new_pwd">新密码</label>
+                <input type="text" name="new_pwd" id="new_pwd" placeholder="请输入新密码" class="a">
+            </p>
+
+            <p class="regs">
+                <!--p只能放 span a  表单控件-->
+                <a href="#">
+                    <input type="submit" value="修改">
+                </a>
+            </p>
+
+        </form>
+    </div>
+</body>
+</html>

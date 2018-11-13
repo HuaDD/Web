@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+    <style>
+        .reg{
+            width: 720px;
+            height: 400px;
+            margin: 110px;
+            margin-left: 720px;
+        }
+        .reg p{
+            margin-bottom: 20px;
+            width: 720px;
+            height: 42px;
+        }
+        .reg p label{
+            float:left;
+            height: 42px;
+            width: 65px;
+            margin-right: 10px;
+            line-height: 42px;
+            font-size: 14px;
+            color: #666;
+            font-weight: 700;
+            text-align: right;
+        }
+        .reg p .a{
+            border:0;
+            float:left;
+            /*font-size: 20px;*/
+            height: 42px;
+            width: 313px;
+            padding-left: 15px;
+            margin-right: 10px;
+            border: 1px solid #ddd;
+            font-size: 14px;
+            color: #666;
+        }
+        .regs{
+            margin-left: 81px;
+        }
+        .regs a input{
+            width: 270px;
+            height: 42px;
+            border: none;
+            background-color: #3f89ec;
+            border-radius: 5px;
+            color: rgb(255,255,255);
+        }
+        .reg1{
+            margin-left: 81px;
+
+
+        }
+
+    </style>
+</head>
+<body>
+    <div class="reg">
+        <form action="" method="post">
+            {% csrf_token %}
+            <p>
+                <label for="user">用户名</label>
+                <input type="text" name="username" id="user" placeholder="请输入用户名" class="a">
+            </p>
+             <p>
+                 <label for="password">密&nbsp&nbsp&nbsp码</label>
+                <input type="password" name="password" id="password" placeholder="请输入密码" class="a">
+                 <span style="color: red;font-size: 4px;line-height: 42px;">{{ err }}</span>
+             </p>
+            <label class="reg1">
+                <input type="checkbox"> Remember me
+            </label>
+
+            <p class="regs">
+                <!--p只能放 span a  表单控件-->
+                <a href="#">
+                    <input type="submit" value="登录">
+                </a>
+            </p>
+
+        </form>
+    </div>
+</body>
+</html>
